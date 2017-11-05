@@ -1,0 +1,376 @@
+﻿@{
+    ViewData["Title"] = "CSS FlexBox";
+}
+
+<link rel="stylesheet" href="~/css/flexbox_style.css" />
+<div id="home" class="flex">
+    <link rel="stylesheet" href="~/css/title_style.css" />
+    <img src="~/images/css_flexbox.png" alt="CSS FlexBox" />
+</div>
+<div class="flex">
+    <div class="item"> </div>
+    <div class="item" style="background-color: navajowhite"> </div>
+    <div id="definition" class="item" style="background-color: tan"> </div>
+</div>
+<div>
+    <h1><b>Определение</b></h1>
+    <p id="basis" class="definition"><b>CSS FlexBox</b> <i>(Flexible Box Layout Module)</i> — модуль макета гибкого контейнера — способ компоновки элементов.</p>
+    <h1><b>Основные понятия</b></h1>
+    <img src="~/images/flexbox-info.png" alt="Общее представление Flexbox" title="Рисунок 1. Основные понятия FlexBox" />
+    <p></p>
+    <p>FlexBox состоит из <b>Контейнера</b> и его <b>Дочерних элементов (Items)</b>.</p>
+    <p>
+        В основе FlexBox лежит идея оси.
+        FlexBox является инструментом двумерной компоновки и использует для работы две оси — <b>главную ось</b> и <b>поперечную</b>:
+    </p>
+    <ul>
+        <li>
+            <b>Главная ось</b> — главное направление движения элементов внутри контейнера. Направление главной оси можно изменить с помощью свойства <i>flex-direction</i>.
+            При смене осей меняются только направления движения блоков внутри, а начало, конец и размер контейнера остаются прежними.
+        </li>
+        <li><b>Начало и конец главной оси</b> — элементы располагаются от начала и до конца контейнера.</li>
+        <li><b>Поперечная ось</b> - направление движения элементов, когда они не умещаются в контейнер по направлению главной оси. Поперечная ось всегда перпендикулярна главной.</li>
+        <li><b>Начало и конец поперечной оси</b> — по поперечной оси ряды также заполняются от начала и до конца контейнера.</li>
+        <li>
+            <b>Размер (главный и поперечный)</b> — базовая величина, по которой высчитывается ширина или высота внутренних элементов, если размер указан не точно
+            (указан в процентах или не указан вообще), а элемент должен растянуться или сжаться.
+        </li>
+    </ul>
+    <p>Для включения FlexBox HTML-элементу необходимо присвоить CSS-свойство <code>display:flex;</code> или <code>display:inline-flex;</code>.</p>
+    <p class="code">
+        <pre>/* CSS: */
+&lt;style&gt;
+    .flex {
+        display: flex;
+    }
+&lt;/style&gt;
+
+/* HTML: */
+&lt;div class="flex"&gt;
+    &lt;div class="item"&gt;1&lt;/div&gt;
+    &lt;div class="item"&gt;2&lt;/div&gt;
+&lt;/div&gt;</pre>
+    </p>
+    <p>
+        После включения свойства <i>flex</i> внутри контейнера создаются две перпендикулярные оси: главная и поперечная (кросс-ось).
+        Все вложенные элементы (первого уровня) выстраиваются по главной оси. По умолчанию главная ось горизонтальная и имеет направление слева направо (→),
+        а кросс-ось, соответственно, вертикальная и направлена сверху вниз (↓).
+    </p>
+    <p>
+        Главную и кросс оси можно поменять местами. В этом случае элементы будут располагаться сверху вниз (↓), а перемещаться слева направо (→) станут только тогда, когда перестанут вмещаться в высоту.
+        Следует заметить, что начало и конец расположения элементов при этом не меняется — меняются только направления (оси).
+    </p>
+    <script async src="//jsfiddle.net/Nicklausse/rgtygv8x/embed/result,html,css/?bodyColor=ffffe0"></script>
+    <p>
+        Еще одной важной особенностью FlexBox является наличие рядов в поперечном направлении, возникающих, когда на горизонтальной оси пытаются разместить слишком много элементов и они все не
+        влезают в контейнер, вследствие чего и переносятся на другой ряд.
+    </p>
+    <script async src="//jsfiddle.net/Nicklausse/Lpcdsufq/embed/result,html,css/?bodyColor=ffffe0"></script>
+    <h1><b>Свойства CSS FlexBox</b></h1>
+    <p id="for-container">FlexBox содержит различные CSS-правила для управления всей конструкцией, причем одни из них нужно применять к основному контейнеру, а другие к элементам этого контейнера.</p>
+    <h2><b>Для контейнера</b></h2>
+    <ol>
+        <li>
+            <b>display:</b>
+            <p>
+                Включает свойство <i>flex</i> для элемента HTML. Под это свойство попадает сам элемент и вложенные в него элементы первого уровня, становящиеся соответственно flex-контейнером и
+                его элементами.
+            </p>
+            <p>Возможны следующие значения свойства:</p>
+            <ul>
+                <li><b>flex</b> — элемент растягивается на всю ширину и имеет свое полное пространство среди окружающих блоков. Происходит перенос строк в начале и в конце блока.</li>
+                <li><b>inline-flex</b> — элемент обтекается другими элементами. При этом его внутренняя часть форматируется как блочный элемент, а сам элемент — как встроенный.</li>
+            </ul>
+            <p><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/uuyqd344/embed/result,html,css/?bodyColor=ffffe0"></script>
+            <p>Главное отличие <i>flex</i> и <i>inline-flex</i> в том, что они по-разному взаимодействуют с окружающими элементами</p>
+        </li>
+        <li>
+            <b>flex-direction:</b>
+            <p>Изменяет направление главной оси контейнера. Поперечная ось меняется соответственно.</p>
+            <p>Возможны следующие значения свойства:</p>
+            <ul>
+                <li><b>row (default)</b> — направление элементов слева направо (→).</li>
+                <li><b>column</b> — направление элементов сверху вниз (↓).</li>
+                <li><b>row-reverse</b> — направление элементов справа налево (←).</li>
+                <li><b>column-reverse</b> — направление элементов снизу вверх (↑).</li>
+            </ul>
+            <p><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/xywbun1L/embed/result,html,css/?bodyColor=ffffe0"></script>
+        </li>
+        <li>
+            <b>flex-wrap:</b>
+            <p>Управляет переносом элементов, которые не помещаются в контейнер.</p>
+            <p>Возможны следующие значения свойства:</p>
+            <ul>
+                <li>
+                    <b>nowrap (default)</b> — вложенные элементы располагаются в один ряд (при <i>direction = row</i>) или в одну колонку (при <i>direction = column</i>)
+                    вне зависимости от того, помещаются ли они в контейнер.
+                </li>
+                <li><b>wrap</b> — включает перенос элементов на следующий ряд, если они не помещаются в контейнер.</li>
+                <li><b>wrap-reverse</b> — то же, что <i>wrap</i>, но перенос осуществляется не вниз, а вверх (в обратном направлении).</li>
+            </ul>
+            <p><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/s0hbxx0e/embed/result,html,css/?bodyColor=ffffe0"></script>
+        </li>
+        <li>
+            <b>flex-flow: flex-direction flex-wrap:</b>
+            <p>Объединяет оба предыдущих свойства, т.е. можно указать одновременно <i>flex-direction</i> и <i>flex-wrap</i>. Также можно указать и только одно из значений:</p>
+            <p class="code">
+                <pre>/* Только flex-direction */
+flex-flow: row;
+flex-flow: row-reverse;
+flex-flow: column;
+flex-flow: column-reverse;
+
+/* Только flex-wrap */
+flex-flow: nowrap;
+flex-flow: wrap;
+flex-flow: wrap-reverse;
+
+/* Сразу оба значения: flex-direction и flex-wrap */
+flex-flow: row nowrap;
+flex-flow: column wrap;
+flex-flow: column-reverse wrap-reverse;</pre>
+            </p>
+        </li>
+        <li>
+            <p><b>justify-content:</b></p>
+            <p>Выравнивает элементы по основной оси: если <i>direction = row</i> то по горизонтали, а если <i>direction = column</i> то по вертикали.</p>
+            <p>Возможны следующие значения свойства:</p>
+            <ul>
+                <li><b>flex-start (default)</b> — элементы будут идти с начала (в конце может остаться место).</li>
+                <li><b>flex-end</b> — элементы выравниваются по концу (место может остаться в начале).</li>
+                <li><b>center</b> — элементы выравниваются по центру (место останется слева и справа)</li>
+                <li><b>space-between</b> — крайние элементы прижимаются к краям (место между элементами распределяется равномерно).</li>
+                <li>
+                    <b>space-around</b> — свободное пространство равномерно распределяется между элементами (крайние элементы не прижимаются к краям).
+                    Пространство между краем контейнера и крайними элементами будет в два раза меньше, чем пространство между элементами в середине ряда.
+                </li>
+            </ul>
+            <p><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/tgo8mo7s/embed/result,html,css/?bodyColor=ffffe0"></script>
+        </li>
+        <li>
+            <p><b>align-content:</b></p>
+            <p>Выравнивает ряды, в которых находятся элементы по поперечной оси. То же, что <i>justify-content</i> но для поперечной оси.</p>
+            <p>
+                Таким образом, если установлено <code>flex-direction: row</code>, то данное свойство будет выравнивать невидимые ряды по вертикали (↨). При этом высота блока должна быть задана жестко и должна быть
+                больше высоты рядов, иначе сами ряды будут растягивать контейнер и любое их выравнивание теряет смысл, потому что между ними нет свободного места.
+                В то же время, когда установлено свойство <code>flex-direction:</code> column, то ряды движется по горизонтали (→) и ширина контейнера почти всегда больше ширины рядов, вследствие чего выравнивание рядов сразу приобретает смысл.
+            </p>
+            <p>Возможны следующие значения свойства:</p>
+            <ul>
+                <li><b>stretch (default)</b> — линии растягиваются, заполняя строку полностью.</li>
+                <li><b>flex-start</b> — линии будут идти с начала (в конце может остаться место).</li>
+                <li><b>flex-end</b> — линии выравниваются по концу (место останется в начале).</li>
+                <li><b>center</b> — по центру (место останется слева и справа).</li>
+                <li><b>space-between</b> — крайние линии прижимаются к краям (место между линиями распределяется равномерно).</li>
+                <li><b>space-around</b> — свободное пространство равномерно распределяется между элементами (крайние элементы не прижимаются к краям). </li>
+            </ul>
+            <p><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/66m8b895/1/embed/result,html,css/?bodyColor=ffffe0"></script>
+            <p>Свойство <i>align-content</i> свойство используется редко, чаще используется <i>align-items</i> (см.ниже). </p>
+        </li>
+        <li>
+            <p><b>align-items:</b></p>
+            <p>
+                Выравнивает элементы по поперечной оси внутри ряда (невидимой строки). Таким образом, сами ряды выравниваются по поперечной оси через <i>align-content</i>, а элементы внутри этих рядов (строк) —
+                через <i>align-items</i>. По главной оси такого разделения нет, там нет понятия рядов, и элементы выравниваются через <i>justify-content</i>
+            </p>
+            <p>Возможны следующие значения свойства:</p>
+            <ul>
+                <li><b>stretch (default)</b> — элементы растягиваются, заполняя строку полностью.</li>
+                <li><b>flex-start</b> — элементы прижимаются к началу строки.</li>
+                <li><b>flex-end</b> — элементы прижимаются к концу строки.</li>
+                <li><b>center</b> — элементы выравниваются по центру строки</li>
+                <li><b>baseline</b> — элементы выравниваются по базовой линии текста</li>
+            </ul>
+            <p id="for-elements"><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/khy8wkL6/1/embed/result,html,css/?bodyColor=ffffe0"></script>
+        </li>
+    </ol>
+    <h2><b>Для элементов контейнера</b></h2>
+    <ol>
+        <li>
+            <p><b>flex-grow:</b></p>
+            <p>
+                Задает коэффициент увеличения элемента при наличии свободного места в контейнере.
+                По умолчанию <code>flex-grow: 0</code>, т.е. никакой из элементов не должен увеличиваться и заполнять свободное место в контейнере.
+            </p>
+            <p>Принцип действия:</p>
+            <ul>
+                <li>Если всем элементам указать <code>flex-grow: 1</code>, то все они растянутся одинаково и заполнят всё свободное место в контейнере.</li>
+                <li>Если одному из элементов указать <code>flex-grow: 1</code>, то он заполнит всё свободное место в контейнере.</li>
+                <li>Если один из элементов имеет <code>flex-grow: 2</code>, а остальные <code>flex-grow: 1</code>, то первый будет в 2 раза больше.</li>
+            </ul>
+            <p><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/2ohzcs4o/embed/result,html,css/?bodyColor=ffffe0"></script>
+            <p>Следует отметить, что в значении свойства можно указывать также дробные числа, например, <code>flex-grow:0.5</code></p>
+        </li>
+        <li>
+            <p><b>flex-shrink:</b></p>
+            <p>
+                Задает коэффициент уменьшения элемента. Свойство, противоположное <i>flex-grow</i>: определяет, как элемент должен сжиматься, если в контейнере не остается свободного места.
+                Таким образом, свойство начинает работать, когда сумма размеров всех элементов больше, чем размер контейнера. По умолчанию <code>flex-shrink:1</code>
+            </p>
+            <p><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/s8mb6bu7/embed/result,html,css/?bodyColor=ffffe0"></script>
+            <p>Следует отметить, что в значении, так же, как и у <i>flex-grow</i> можно указывать дробные числа, например, <code>flex-shrink:0.5</code></p>
+        </li>
+        <li>
+            <p><b>flex-basis:</b></p>
+            <p>
+                Устанавливает базовую ширину элемента, то есть значение ширины до того, как будут вычислены остальные условия, влияющие на это значение. Может быть указано в px, %, em, rem и т.д. Итоговая ширина будет
+                зависеть от базовой ширины и значений <i>flex-grow</i> <i>flex-shrink</i> и контента внутри блока. По умолчанию устанавливается режим <i>auto</i>, в котором элемент получает базовую ширину относительно контента внутри него.
+            </p>
+            <p><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/qe1zrme0/embed/result,html,css/?bodyColor=ffffe0"></script>
+        </li>
+        <li>
+            <p><b>flex: flex-grow flex-shrink flex-basis:</b></p>
+            <p>Короткая запись трех указанных выше свойств. По умолчанию устанавливается <code>flex: 0 1 auto</code></p>
+            <p>Однако можно указать и одно, и два значения:</p>
+            <p class="code">
+                <pre>flex: none; /* 0 0 auto */
+
+/* число */
+flex: 2; /* flex-grow (flex-basis переходит в 0) */
+
+/* не число */
+flex: 10em;    /* flex-basis: 10em */
+flex: 30px;    /* flex-basis: 30px */
+flex: auto;    /* flex-basis: auto */
+flex: content; /* flex-basis: content */
+
+flex: 1 30px; /* flex-grow и flex-basis */
+
+flex: 2 2; /* flex-grow и flex-shrink (flex-basis переходит в 0) */
+
+flex: 2 2 10%; /* flex-grow и flex-shrink и flex-basis */
+</pre>
+        <li>
+            <p><b>align-self:</b></p>
+            <p>Позволяет изменить свойство <i>align-items</i> для отдельного элемента. По умолчанию берется от <i>align-items</i> контейнера</p>
+            <p>Возможны следующие значения свойства:</p>
+            <ul>
+                <li><b>stretch</b> — элемент растягивается, заполняя строку полностью.</li>
+                <li><b>flex-start</b> — элемент прижимается к началу строки.</li>
+                <li><b>flex-end</b> — элемент прижимается к концу строки.</li>
+                <li><b>center</b> — элемент выравнивается по центру строки.</li>
+                <li><b>baseline</b> — элемент выравнивается по базовой линии текста.</li>
+            </ul>
+            <p><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/uh5f5984/embed/result,html,css/?bodyColor=ffffe0"></script>
+        </li>
+        <li>
+            <p><b>order:</b></p>
+            <p>Позволяет менять порядок (позицию, положение) элемента в общем ряду</p>
+            <p>
+                По умолчанию элементы имеют <code>order: 0</code> и ставятся в порядке их появления в HTML-коде и направления ряда. Однако если изменить значение свойства <i>order</i>, то элементы
+                будут выстраиваться в порядке значений: -1 0 1 2 3. Например, если одному из элементов указать <code>order: 1</code>, то сначала будут идти все нулевые элементы, а затем элемент с 1.
+            </p>
+            <p id="examples"><b>Пример:</b></p>
+            <script async src="//jsfiddle.net/Nicklausse/qv9L31bn/embed/result,html,css/?bodyColor=ffffe0"></script>
+        </li>
+    </ol>
+    <h1><b>Примеры использования CSS FlexBox</b></h1>
+    <ol>
+        <li>
+            <p><b>Выравнивание по горизонтали и вертикали</b></p>
+            <p>Один из самых простых примеров применения FlexBox — жесткое выравнивание по горизонтали и вертикали одновременно при любой высоте блока.</p>
+            <p class="code">
+                <pre> /* HTML: */
+&lt;span class="center-text"&gt;Текст по середине&lt;/span&gt;
+&lt;/div&gt;
+
+/* CSS: */
+&lt;style&gt;                        
+    .center-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }                           
+&lt;/style&gt;
+</pre>
+            </p>
+            <script async src="//jsfiddle.net/Nicklausse/7ykkdeh2/2/embed/result,html,css/?bodyColor=ffffe0"></script>
+        </li>
+        <li>
+            <p><b>Адаптивные три колонки</b></p>
+            <p>Создание трех колонок, который при сужении превращаются в две, а затем в одну.</p>
+            <p class="code">
+                <pre>/* HTML: */
+&lt;div class="flex"&gt;
+    &lt;div class="item"&gt;Ex.1&lt;/div&gt;
+    &lt;div class="item"&gt;Ex.2&lt;/div&gt;
+    &lt;div class="item"&gt;Ex.3&lt;/div&gt;
+    &lt;div class="item"&gt;Ex.4&lt;/div&gt;
+    &lt;div class="item"&gt;Ex.5&lt;/div&gt;
+    &lt;div class="item"&gt;Ex.6&lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS: */
+&lt;style&gt;
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 700px; /* макс. ширина */
+        margin: 0 auto; /* выравнивание по центру */
+    }
+    .item {
+        flex: 1 1 calc(33.33% - 30px); /* отнимается margin + устанавливается растяжение */
+        margin: 5px;
+        box-sizing: border-box; /* чтобы внутренний отступ не влиял, когда там будет текст */
+        min-width: 170px; /* мин. ширина блока, чтобы переносились на другой ряд */
+        padding: 50px 20px;
+        font-size: 400%;
+        text-align: center;
+        background: lightyellow;
+    }
+&lt;/style&gt;
+</pre>
+            </p>
+            <script async src="//jsfiddle.net/Nicklausse/8j5cm7p8/6/embed/result,html,css/?bodyColor=ffffe0"></script>
+        </li>
+        <li>
+            <p><b>Галерея на Flex</b></p>
+            <p>Создание галереи картинок при помощи Flex и с использованием свойства <i>transition</i>.</p>
+            <p class="code">
+                <pre>/* HTML: */
+&lt;div class="flex"&gt;
+    &lt;div class="item img1"&gt;1&lt;/div&gt;
+    &lt;div class="item img2"&gt;2&lt;/div&gt;
+    &lt;div class="item img3"&gt;4&lt;/div&gt;
+    &lt;div class="item img4"&gt;5&lt;/div&gt;
+    &lt;div class="item img5"&gt;6&lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS: */
+&lt;style&gt;
+    .flex {
+	    display: flex;
+	    overflow: hidden; /*скрыть тень*/
+    }
+    .item {
+	    height:300px;
+	    flex:20%; /* = flex-basis:20%; */
+	    transition: flex 300ms ease;
+	    box-shadow: 0 0 19px 3px #000; margin: 1px; /* настройки тени */
+    }
+    .item:hover {
+	flex: 0.1 0.1 400px;
+	background-size: 100% 100%
+    }
+
+    .img1 { background: url('http://lorempixel.com/400/300/cats/1') 0 0 no-repeat; }
+    .img2 { background: url('http://lorempixel.com/400/300/cats/2') 0 0 no-repeat; }
+    .img3 { background: url('http://lorempixel.com/400/300/cats/3') 0 0 no-repeat; }
+    .img4 { background: url('http://lorempixel.com/400/300/cats/4') 0 0 no-repeat; }
+    .img5 { background: url('http://lorempixel.com/400/300/cats/5') 0 0 no-repeat; }
+&lt;/style&gt;
+</pre>
+            </p>
+            <script async src="//jsfiddle.net/Nicklausse/86guxtrg/embed/result,html,css/?bodyColor=ffffe0"></script>
+    </ol>
+</div>

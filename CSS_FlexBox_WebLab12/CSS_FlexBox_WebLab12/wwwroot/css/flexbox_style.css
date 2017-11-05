@@ -1,0 +1,62 @@
+﻿h1 {
+    font-family: Calibri;
+    font-size: 20pt;
+}
+
+h2 {
+    font-family: Calibri;
+    font-size: 18pt;
+}
+
+body {
+    background-color: navajowhite;
+}
+
+div {
+    margin-left: 120px;
+    margin-right: 120px;
+    font-family: Calibri;
+    font-size: 16pt;
+    text-align: justify;
+    background-color: lightyellow;
+}
+
+pre {
+    font-size: 13pt;
+    background-color: navajowhite;
+    border: double;
+    border-color: peru;
+}
+
+code {
+    background-color: navajowhite;
+    color: black;
+    font-size: 13pt;
+}
+
+ol {
+   padding-left:20px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding:5px;
+}
+
+.item {
+    margin: 5px;
+    padding: 15px;
+    border: double;
+    border-color: peru;
+    width: 100px;
+}
+
+
+.definition {
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: burlywood;
+    border: double;
+    border-color: peru;
+}

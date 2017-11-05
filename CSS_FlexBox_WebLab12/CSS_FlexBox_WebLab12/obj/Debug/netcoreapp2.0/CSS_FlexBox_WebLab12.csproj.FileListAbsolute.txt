@@ -1,0 +1,11 @@
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\bin\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.deps.json
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\bin\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.runtimeconfig.json
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\bin\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.runtimeconfig.dev.json
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\bin\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.dll
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\bin\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.pdb
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\obj\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.csprojResolveAssemblyReference.cache
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\obj\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.csproj.CoreCompileInputs.cache
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\obj\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.AssemblyInfoInputs.cache
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\obj\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.AssemblyInfo.cs
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\obj\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.dll
+C:\Users\komle\source\repos\CSS_FlexBox_WebLab12\CSS_FlexBox_WebLab12\obj\Debug\netcoreapp2.0\CSS_FlexBox_WebLab12.pdb

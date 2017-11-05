@@ -1,0 +1,11 @@
+﻿.flex {
+    display: flex;
+    justify-content: center;
+    background-color: burlywood;
+}
+
+.item
+{
+    font-size: 48pt;
+    height: 120px;
+}

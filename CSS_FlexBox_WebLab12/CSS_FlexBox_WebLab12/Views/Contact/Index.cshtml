@@ -1,0 +1,43 @@
+﻿@model CSS_FlexBox_WebLab12.EmailMessage;
+
+@{
+    ViewData["Title"] = "Обратная связь";
+}
+
+<link rel="stylesheet" href="~/css/flexbox_style.css" />
+<link rel="stylesheet" href="~/css/mediastyle.css" />
+<div id="home" class="flex">
+    <link rel="stylesheet" href="~/css/title_style.css" />
+    <img src="~/images/css_flexbox.png" alt="CSS FlexBox" />
+</div>
+<div class="flex">
+    <div class="item"> </div>
+    <div class="item" style="background-color: navajowhite"> </div>
+    <div id="definition" class="item" style="background-color: tan"> </div>
+</div>
+<div style="margin-left:280px">
+    <h1><b>Обратная связь</b></h1>
+    <form method="post" action="~/Contact/Send"/>
+        <p>
+                <b>Ваш E-mail:</b><br>
+                    <input asp-for="Email" type="text" size="60"/><br />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+        </p>
+        <p>
+            <b>Тема сообщения:</b><br>
+            <input asp-for="Subject" type="text" size="60" /><br />
+            <span asp-validation-for="Subject" class="text-danger"></span>
+        </p>
+        <p>
+            <b>Текст сообщения:</b><br>
+            <textarea asp-for="Text" cols="61" rows="5" wrap="soft"><</textarea><br />
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </p>
+        <p style="font:18px arial">
+            <input type="submit" value="Отправить">
+        </p>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
