@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Game Of Life";
+}
+
+<link rel="stylesheet" href="~/css/game.css" />
+
+<body>
+        
+    <img src="~/images/title.png" alt="Game Of Life" />
+
+    <canvas id="myCanvas" width="1000" height="400" style="border:1px solid #FF0066"></canvas>
+
+    <div>
+        <style> button {
+                font-size:12pt;
+                width: 100px;
+                height: 40px;
+                border: double;
+                border-color: #FF0066;
+                background-color: white;
+                color: #FF0066;
+            } </style>
+        
+        <button id="stop"><b>Pause</b></button>
+        <button id="start"><b>Start</b></button>
+        <button id="newGame"><b>New Game</b></button>
+    </div>
+    
+    <environment include="Development">
+        <script src="~/js/game.js"></script>
+    </environment>
+</body>

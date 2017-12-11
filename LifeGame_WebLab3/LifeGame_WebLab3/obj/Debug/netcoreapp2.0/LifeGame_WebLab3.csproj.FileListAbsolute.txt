@@ -1,0 +1,11 @@
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\bin\Debug\netcoreapp2.0\LifeGame_WebLab3.deps.json
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\bin\Debug\netcoreapp2.0\LifeGame_WebLab3.runtimeconfig.json
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\bin\Debug\netcoreapp2.0\LifeGame_WebLab3.runtimeconfig.dev.json
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\bin\Debug\netcoreapp2.0\LifeGame_WebLab3.dll
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\bin\Debug\netcoreapp2.0\LifeGame_WebLab3.pdb
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\obj\Debug\netcoreapp2.0\LifeGame_WebLab3.csprojResolveAssemblyReference.cache
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\obj\Debug\netcoreapp2.0\LifeGame_WebLab3.csproj.CoreCompileInputs.cache
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\obj\Debug\netcoreapp2.0\LifeGame_WebLab3.AssemblyInfoInputs.cache
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\obj\Debug\netcoreapp2.0\LifeGame_WebLab3.AssemblyInfo.cs
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\obj\Debug\netcoreapp2.0\LifeGame_WebLab3.dll
+C:\Users\komle\source\repos\LifeGame_WebLab3\LifeGame_WebLab3\obj\Debug\netcoreapp2.0\LifeGame_WebLab3.pdb
